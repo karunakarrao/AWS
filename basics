@@ -1,0 +1,31 @@
+
+Cloud computing models provided by AWS:
+----------------------------------------------
+ 1. Infrastructure as a service (IAAS) --> Example: VPC, EC2, EBS
+ 2. Platform as a service (PAAS) --> Example: RDS, EMR, Elastic Search
+ 3. Software as a service (SAAS) --> Example: Web-based email, Office 365, Salesforce. com
+ 4. Function as a service (FAAS)/Abstracted services --> Server less computing --> AWS allows you to build and run application and services without thinking about servers. 
+ 	|--> Example: S3, AWS Lambda, AWS DynamoDB, AWS SNS
+
+
+AWS- Storage Services:
+-------------------------
+1. Simple storage service (S3) ?  
+2. Glacier ( for content archiving ) ?
+3. EBS( Elastic Block Store ) ? used in EC2 instance
+4. Elastic File System (EFS) ?
+5. Storage Gateway
+6. Snowball
+
+AWS 
+  |--> Created VPC
+            |--> Launched 2 Servers
+	      |--> Attached to Amazon EBS storage
+		|--> to share the data among server created need EFS(Elastic File System) Mount Target ---->DataSource EFS Share(NAS)
+
+VPC: Virtual Private Cloud is our own Virtual private space with in AWS Cloud. Its highly secure space where no one is allowed until the VPC owner give permission to external world. 
+
+endpoint --> S3 Bucket --> Glacier
+
+
+
