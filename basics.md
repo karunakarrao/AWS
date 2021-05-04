@@ -1,13 +1,17 @@
 
 different types of cloud computing models that are available:
 ---------------------------------------------------------------
- Infrastructure as a service (IAAS):  So if we want to launch a Linux server and, we want to manage that Linux server ourselves, that is how we would do that as infrastructure as a service and we would do that using the Elastic Compute cloud or EC2 service. 
+Infrastructure as a service (IAAS):  
+So if we want to launch a Linux server and, we want to manage that Linux server ourselves, that is how we would do that as infrastructure as a service and we would do that using the Elastic Compute cloud or EC2 service. 
 
-Platform as a service or (PaaS):  that's where AWS will take a little bit more control over the underlying infrastructure. AWS manages their underlying infrastructure and the hardware and operating system normally and, a good example of that would be the relational database service and, in that service AWS they provision all the operating system, the server and everything to run that but, you still need to do the high-level administration of that database
+Platform as a service or (PaaS):  
+that's where AWS will take a little bit more control over the underlying infrastructure. AWS manages their underlying infrastructure and the hardware and operating system normally and, a good example of that would be the relational database service and, in that service AWS they provision all the operating system, the server and everything to run that but, you still need to do the high-level administration of that database
 
-Software as a service(SaaS):  that is a complete product that normally runs in a browser and it mostly refers to end-user applications. A good example that would be Office 365 or salesforce.com, 
+Software as a service(SaaS):
+that is a complete product that normally runs in a browser and it mostly refers to end-user applications. A good example that would be Office 365 or salesforce.com, 
 
-serverless computing: That allows you to build and run applications without having to think about servers. You don't need to provision the server yourself AWS will do that for you. It's also referred to as function as a service or abstract services. Examples of that are the simple storage service .
+serverless computing: 
+That allows you to build and run applications without having to think about servers. You don't need to provision the server yourself AWS will do that for you. It's also referred to as function as a service or abstract services. Examples of that are the simple storage service .
 
 Cloud computing models provided by AWS:
 ----------------------------------------------
@@ -19,19 +23,25 @@ Cloud computing models provided by AWS:
 
 storage services that are available on AWS:
 --------------------------------------------- 
-Amazon simple storage service or (S3) for short:   It's designed to store and access any type of data over the Internet. It's a serverless service and as such we don't need to worry about what is behind it. There's obviously a file server an operating system a hard drive but we don't need to be concerned about that at all. We just simply need to create this thing called a bucket and then we upload objects to that bucket, the bucket grows as we add objects to it and the size of that bucket is theoretically unlimited. AWS just looks after everything for us.
+Amazon simple storage service or (S3):
+It's designed to store and access any type of data over the Internet. It's a serverless service and as such we don't need to worry about what is behind it. There's obviously a file server an operating system a hard drive but we don't need to be concerned about that at all. We just simply need to create this thing called a bucket and then we upload objects to that bucket, the bucket grows as we add objects to it and the size of that bucket is theoretically unlimited. AWS just looks after everything for us.
 
-Amazon Glacier : 	 is the cheapest storage option on AWS and it's used for long-term archiving of data. It's a serverless service just like Amazon s3 but it is not as readily accessible as s3 so it should only be used for content that 
+Amazon Glacier : 
+is the cheapest storage option on AWS and it's used for long-term archiving of data. It's a serverless service just like Amazon s3 but it is not as readily accessible as s3 so it should only be used for content that 
 is to be archived. You can also set up a lifecycle rule that will automatically migrate old data in Amazon s3 automatically over to Glacier for long-term archiving. 
 
-Amazon elastic block store or EBS for short:  	 is a highly available, low latency block storage and it's specifically for attaching to servers that are launched with the Amazon ec2 service and it's similar to attaching a hard drive to 
+Amazon elastic block store or EBS for short:  	
+is a highly available, low latency block storage and it's specifically for attaching to servers that are launched with the Amazon ec2 service and it's similar to attaching a hard drive to 
 your computer at home, works in the same manner. 
 
-Amazon Elastic file system or EFS for short:  	 is network attached storage and it's specifically for Amazon EC2 servers. Because it is network attached store, this allows multiple servers to access one data source in a similar way to NAS on your network at home can be accessed by multiple computers on that network. 
+Amazon Elastic file system or EFS for short:  	
+is network attached storage and it's specifically for Amazon EC2 servers. Because it is network attached store, this allows multiple servers to access one data source in a similar way to NAS on your network at home can be accessed by multiple computers on that network. 
 
-The AWS Storage Gateway:  	 enables hybrid storage between on-premise environments(onsite datacenter of a company ex: icici banck/etc) and the AWS cloud. It provides a low latency performance by caching frequently used data on-premises while storing the less frequently data in Amazon Cloud storage services. 
+The AWS Storage Gateway: 
+is enables hybrid storage between on-premise environments(onsite datacenter of a company ex: icici banck/etc) and the AWS cloud. It provides a low latency performance by caching frequently used data on-premises while storing the less frequently data in Amazon Cloud storage services. 
 
-A Snowball device:  is a portable, petabyte scale, data storage device that can be used to migrate data and large amount of data from on-premise environments over to the AWS cloud. You simply download your data to the Snowball device, then you send it off to AWS who will then upload that data to an AWS storage service for you. 
+A Snowball device: 
+is a portable, petabyte scale, data storage device that can be used to migrate data and large amount of data from on-premise environments over to the AWS cloud. You simply download your data to the Snowball device, then you send it off to AWS who will then upload that data to an AWS storage service for you. 
 
 AWS- Storage Services:
 -------------------------
@@ -68,17 +78,23 @@ S3 bucket with Objects --> AWS Storage Gateway -->  corporate data center (onsit
 different options that are available for running databases on AWS:
 ------------------------------------------------------------------
 
-The relational database service or RDS for short:    is a fully managed database service that makes it easy to launch database servers in the AWS cloud and scale them when required. The RDS service can launch servers for mySQL including variations of the mySQL database engine with MariaDB and Amazon's own enterprise version of mySQL Amazon Aurora. Standard Postgre SQL is also available and also available as Amazon's Enterprise Aurora Postgre SQL. Microsoft SQL server and Oracle are also available. 
+The relational database service or RDS: 
+is a fully managed database service that makes it easy to launch database servers in the AWS cloud and scale them when required. The RDS service can launch servers for mySQL including variations of the mySQL database engine with MariaDB and Amazon's own enterprise version of mySQL Amazon Aurora. Standard Postgre SQL is also available and also available as Amazon's Enterprise Aurora Postgre SQL. Microsoft SQL server and Oracle are also available. 
 
-Amazon DynamoDB is : AWS's NoSQL database as a service. It's a serverless service like Amazon S3 and as such you don't need to worry about the underlying infrastructure behind it. AWS takes care of everything for you and it provides high speed extremely low latency performance. 
+Amazon DynamoDB: 
+is a AWS's NoSQL database as a service. It's a serverless service like Amazon S3 and as such you don't need to worry about the underlying infrastructure behind it. AWS takes care of everything for you and it provides high speed extremely low latency performance. 
 
-Amazon Redshift is:  a fast fully managed petabyte scale data warehouse that is based upon the postgre SQL database engine. If you're looking for a big data storage solution Redshift is perfect for this. 
+Amazon Redshift:  
+is a fast fully managed petabyte scale data warehouse that is based upon the postgre SQL database engine. If you're looking for a big data storage solution Redshift is perfect for this. 
 
-Amazon ElastiCache is: an in-memory data store or cache in the cloud. It allows you to retrieve information from fast fully managed in-memory caches instead of relying on slower disk based databases. 
+Amazon ElastiCache: 
+is a an in-memory data store or cache in the cloud. It allows you to retrieve information from fast fully managed in-memory caches instead of relying on slower disk based databases. 
 
-The AWS database migration service or DMS orchestrates a migration of databases over to AWS easily and securely. It can also migrate data from one database engine type to another totally different database engine type, for example you can use it to migrate from Oracle over to Amazon Aurora. 
+The AWS database migration service:
+or DMS orchestrates a migration of databases over to AWS easily and securely. It can also migrate data from one database engine type to another totally different database engine type, for example you can use it to migrate from Oracle over to Amazon Aurora. 
 
-Amazon Neptune is:  a fast reliable fully managed graph database service it has a purpose-built high performance graph database engine optimized for storing billions of relationships and clearing the graph with millisecond latency. 
+Amazon Neptune:  
+is a fast reliable fully managed graph database service it has a purpose-built high performance graph database engine optimized for storing billions of relationships and clearing the graph with millisecond latency. 
 
 ![image](https://user-images.githubusercontent.com/33980623/117020865-717e8400-ad14-11eb-9218-4b3a2a203712.png)
 
@@ -99,15 +115,20 @@ Let's just say a request comes in and that data is not in the Elasticache node. 
 compute and networking services of AWS:
 ---------------------------------------------
 
-EC2 service:  Amazon elastic compute cloud or EC2 for short, provides virtual servers in the AWS cloud. You can launch one or thousands of instances simultaneously and only pay for what you use. There's a broad range of instant types with varying compute and memory capabilities and those will be optimized for different use cases. 
+EC2 service:  
+Amazon elastic compute cloud or EC2 for short, provides virtual servers in the AWS cloud. You can launch one or thousands of instances simultaneously and only pay for what you use. There's a broad range of instant types with varying compute and memory capabilities and those will be optimized for different use cases. 
 
-Amazon EC2 auto scaling: allows you to dynamically scale your Amazon EC2 capacity up or down automatically according to conditions that you define. It can scale up or down by launching or terminating instances based on demand. It can also perform health checks on those instances and replace them when they become unhealthy. 
+Amazon EC2 auto scaling: 
+allows you to dynamically scale your Amazon EC2 capacity up or down automatically according to conditions that you define. It can scale up or down by launching or terminating instances based on demand. It can also perform health checks on those instances and replace them when they become unhealthy. 
 
-Amazon Lightsail:  it's the easiest way to launch virtual servers running applications in the AWS cloud. AWS will provision everything you need including DNS management and storage to get you up and running as quickly as possible. 
+Amazon Lightsail:  
+it's the easiest way to launch virtual servers running applications in the AWS cloud. AWS will provision everything you need including DNS management and storage to get you up and running as quickly as possible. 
 
-Amazon elastic container service or ECS for short is:  a highly scalable high performance container management service for Docker containers. The containers, they will run on a managed cluster of EC2 instances. 
+Amazon elastic container service or ECS: 
+a highly scalable high performance container management service for Docker containers. The containers, they will run on a managed cluster of EC2 instances. 
 
-AWS lambda:  is a serverless service and lets you run code in the AWS cloud without having to worry about provisioning or managing that server. You just upload your code and AWS takes care of everything for you. So let's have a look at how we could use these services to deploy a web server in the AWS cloud.
+AWS lambda: 
+is a serverless service and lets you run code in the AWS cloud without having to worry about provisioning or managing that server. You just upload your code and AWS takes care of everything for you. So let's have a look at how we could use these services to deploy a web server in the AWS cloud.
 
 real-life example: 
 Here we have the AWS cloud and our virtual private cloud or VPC located inside that and remember a VPC is our own private space within the AWS cloud and no one can enter that unless we allow them to enter it. We can launch an EC2 instance and that can be running our web application for example wordpress. 
