@@ -52,11 +52,43 @@ AWS
 	    |--> Attached to Amazon EBS storage
 	      |--> to share the data among server created need EFS(Elastic File System) Mount Target ---->DataSource EFS Share(NAS)
 
+endpoint --> S3 Bucket --> Glacier
+
 VPC: Virtual Private Cloud is our own Virtual private space with in AWS Cloud. Its highly secure space where no one is allowed until the VPC owner give permission to external world. 
 
-endpoint --> S3 Bucket --> Glacier
+Hybrid Storage Example:
+------------------------
+
+S3 bucket with Objects --> AWS Storage Gateway -->  corporate data center (onsite storage)
+
 
 ![image](https://user-images.githubusercontent.com/33980623/116903487-19834700-ac5a-11eb-9726-ae89ba95cfea.png)
 
 
+different options that are available for running databases on AWS:
+------------------------------------------------------------------
+
+The relational database service or RDS for short:    is a fully managed database service that makes it easy to launch database servers in the AWS cloud and scale them when required. The RDS service can launch servers for mySQL including variations of the mySQL database engine with MariaDB and Amazon's own enterprise version of mySQL Amazon Aurora. Standard Postgre SQL is also available and also available as Amazon's Enterprise Aurora Postgre SQL. Microsoft SQL server and Oracle are also available. 
+
+Amazon DynamoDB is : AWS's NoSQL database as a service. It's a serverless service like Amazon S3 and as such you don't need to worry about the underlying infrastructure behind it. AWS takes care of everything for you and it provides high speed extremely low latency performance. 
+
+Amazon Redshift is:  a fast fully managed petabyte scale data warehouse that is based upon the postgre SQL database engine. If you're looking for a big data storage solution Redshift is perfect for this. 
+
+Amazon ElastiCache is: an in-memory data store or cache in the cloud. It allows you to retrieve information from fast fully managed in-memory caches instead of relying on slower disk based databases. 
+
+The AWS database migration service or DMS orchestrates a migration of databases over to AWS easily and securely. It can also migrate data from one database engine type to another totally different database engine type, for example you can use it to migrate from Oracle over to Amazon Aurora. 
+
+Amazon Neptune is:  a fast reliable fully managed graph database service it has a purpose-built high performance graph database engine optimized for storing billions of relationships and clearing the graph with millisecond latency. 
+
+![image](https://user-images.githubusercontent.com/33980623/117020865-717e8400-ad14-11eb-9218-4b3a2a203712.png)
+
+real-life example: 
+------------------
+we've got our corporate data center and inside of our corporate data center we've got an on-site Oracle database. Now let's just say that Oracle database, it's old, it's worn out, it's outgrown its capacity and it needs to be replaced. Now you've done a total cost of ownership analysis on the situation and you've identified that it is far more cost effective to host that database on the aws cloud. 
+	So the first thing that you are going to want to do is to launch an RDS database instance. Now let's say you want to further reduce your cost by not having to pay for the Oracle licensing fee and what you can do is that you can launch an Amazon Aurora database instance and that will be running either the Mysql or the Postgresql open source database engines and by doing that you're not going to be paying for a licensing fee. The disadvantage of that is that some of the fields of data that are located in that Oracle database may not be compatible with the Amazon Aurora Mysql or Postgresql fields. what you're going to need to do is that when you take that data out of your Oracle database, you're going to have to change it and manipulate it to suit the amazon aurora database, and that is where the aws database migration service comes in.
+	You can define a database migration workflow by specifying the source database, the target database and any operations on that data that need to occur during that migration of that data. Once you've done that you can then run the database migration job and that will look after everything for you. It will migrate that data from that on-site oracle database to your amazon aurora database and at the same time it will be giving you feedback through the aws management console, as a dashboard, on the performance of how that job is actually going, because that job could take hours, it could take days, it could take weeks, depending on how big your oracle database is and how fast your connection to the aws cloud is, and it will also give you feedback of any errors and alert you to any problems that may occur. 
+	Once our RDS instance is up and running and the data has been migrated over, then we can look at launching a web server that can receive traffic and requests from the outside world over the internet and then get that data that is required from the RDS database and then return that back to the requester. 
+	Now let's just say we're getting a lot of requests from the outside world and a lot of that is for the same data. What we can look at doing is getting all of our regularly accessed content and putting it into an Elasticache 
+node and, because the Elasticache node is serving those requests from its memory, not from a solid-state drive, as is the case of the rds service, it will be returning that very quickly and it will be at a lower cost. Now we need to take into consideration that the costs of storing data in memory is more expensive than storing that data on a solid state drive and so we need to make sure that Elasticache node only contains regularly accessed data. So the way that we would do that is that requests would come in from the outside world to the web server, the web server could then check to see whether that data is in the Elasticache node. If it is or if it is in the Elasticache node it will simply grab that data and then forward it back to that requester. 
+	Let's just say a request comes in and that data is not in the Elasticache node. So then the web server will go to the RDS database instance, it will get that data if it's there and after it has got that data, it will then write that data into the Elasticache node, and at the same time it will define a time to live or a ttl for that specific data, and once that ttl has expired, if there are no further requests for that data within that ttl, then that data will be removed automatically by the Elasticache service from the Elasticache node, and by doing that, all of that data that's in the Elasticache node will be regularly accessed data that has been accessed within that time to live period. Now let's just say a request comes into that web server for either writing to or deleting from that RDS database. So the way that would work is that the request would come into the web server the web server would then either delete or write to the RDS database. If it is deleting from the database then it would also delete from the Elasticache node as well. If it's writing to the database then it would also write to the Elasticache node and again it would define a time to live period, so that if that data is not requested within that time to live period then it will automatically be removed from the Elasticache node by the Elasticache service.
 
