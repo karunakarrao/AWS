@@ -131,6 +131,7 @@ AWS lambda:
 is a serverless service and lets you run code in the AWS cloud without having to worry about provisioning or managing that server. You just upload your code and AWS takes care of everything for you. So let's have a look at how we could use these services to deploy a web server in the AWS cloud.
 
 real-life example: 
+--------------------
 Here we have the AWS cloud and our virtual private cloud or VPC located inside that and remember a VPC is our own private space within the AWS cloud and no one can enter that unless we allow them to enter it. We can launch an EC2 instance and that can be running our web application for example wordpress. 
 
 So what happens if this single EC2 instance becomes overwhelmed by demand? For example we might have released a new product and our wordpress application cannot deliver the web pages quickly enough to satisfy that. What we could do is that we could tear down that instance and put in a bigger instance that could handle that demand and that is called vertical scaling and that used to be all the rage 10 or 20 years ago but the problem is that it takes time to do that and while we're doing that our application is not running and also, what happens when the demand goes back `down again? Do we have to tear that down and then put in a smaller instance and what happens if that happens every day? What happens if that happens every hour? It's just not going to be economical for us to do that.
