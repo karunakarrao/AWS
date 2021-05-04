@@ -114,6 +114,7 @@ is a highly available and scalable domain name system or DNS for short and it ca
 Amazon API gateway: 
 is a fully managed service that makes it easy for developers to create and deploy secure application programming interfaces or API at any scale. It handles all of the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls. It's a serverless service and as such you don't need to worry about the underlying infrastructure AWS looks after everything for you. 
 
+![image](https://user-images.githubusercontent.com/33980623/117042447-9cbf9e00-ad29-11eb-90e4-e9e1357a1104.png)
 
 real-life example: 
 ------------------
